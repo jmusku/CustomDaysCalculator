@@ -38,7 +38,7 @@ namespace Jeevan.Musku.DateCalculator.Tests.Controllers
             ViewResult result = (ViewResult) controller.Index(date);
 
             // Assert
-            if (result != null) Assert.AreEqual((object) result.ViewBag.message, (object) controller.ViewBag.message);
+            if (result != null) Assert.AreEqual("Total number of days is 3405", (string) controller.ViewBag.message);
         }
     }
 }
