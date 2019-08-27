@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jeevan.Musku.DateCalculator", "Jeevan.Musku.DateCalculator\Jeevan.Musku.DateCalculator.csproj", "{A95A469D-9FC1-4E2A-B9E2-CEDB497BE699}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jeevan.Musku.DateCalculator.Tests", "Jeevan.Musku.DateCalculator.Tests\Jeevan.Musku.DateCalculator.Tests.csproj", "{20ACB434-8D7A-4B61-BC33-DD33D90A21A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A95A469D-9FC1-4E2A-B9E2-CEDB497BE699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A95A469D-9FC1-4E2A-B9E2-CEDB497BE699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A95A469D-9FC1-4E2A-B9E2-CEDB497BE699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A95A469D-9FC1-4E2A-B9E2-CEDB497BE699}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20ACB434-8D7A-4B61-BC33-DD33D90A21A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20ACB434-8D7A-4B61-BC33-DD33D90A21A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20ACB434-8D7A-4B61-BC33-DD33D90A21A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20ACB434-8D7A-4B61-BC33-DD33D90A21A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C6E7317E-DEB7-4BA5-BAD5-095683FCA996}
+	EndGlobalSection
+EndGlobal

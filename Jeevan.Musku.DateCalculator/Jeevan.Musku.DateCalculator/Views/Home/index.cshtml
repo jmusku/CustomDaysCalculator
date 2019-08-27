@@ -1,0 +1,20 @@
+﻿@model Jeevan.Musku.DateCalculator.Models.CustomDate
+
+@{
+    ViewBag.Title = "index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.ValidationSummary(true)
+        <h3>Calculate Difference between dates</h3>
+        <table>
+            <tr><td>From Date (dd/mm/yyyy)</td><td>@Html.TextBoxFor(m => m.FromDate)</td><td>@Html.ValidationMessageFor(m => m.FromDate)</td></tr>
+            <tr><td>To Date (dd/mm/yyyy)</td><td>@Html.TextBoxFor(m => m.ToDate)</td><td>@Html.ValidationMessageFor(m => m.ToDate)</td></tr>
+            <tr><td></td><td><input type="submit" value="Calculate" /></td></tr>
+            <tr><td colspan="2">@ViewBag.message</td></tr>
+        </table>
+    }
+}
+
