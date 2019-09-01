@@ -9,6 +9,10 @@ namespace Jeevan.Musku.DateCalculator.Models
 {
     public class CustomDate
     {
+        public CustomDate()
+        {
+        }
+
         public CustomDate(string from, string to)
         {
             this.FromDate = from;
