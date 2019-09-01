@@ -54,7 +54,7 @@ namespace Jeevan.Musku.DateCalculator.Utilities
             if (toArray[2] > fromArray[2])
             {
                 var yearDiff = toArray[2] - fromArray[2];
-                var noOfLeapYears = Math.Round((double)(yearDiff/4), MidpointRounding.ToEven);
+                var noOfLeapYears = Math.Round((double)(yearDiff/4.0), MidpointRounding.ToEven);
                 diffInDays = (int)(yearDiff * 365 + noOfLeapYears);
             }
 
