@@ -40,27 +40,65 @@ namespace Jeevan.Musku.DateCalculator.Utilities
                     }
                 }
             }
-
             return false;
         }
 
         //To calculate the difference between dates in number of days.
         public int CalculateDifferenceInDays(string fromDate, string toDate)
         {
-            var diffInDays = 0;
+            int diffInDays = 0;
             var fromArray = TransformDateToArray(fromDate);
             var toArray = TransformDateToArray(toDate);
 
             if (toArray[2] > fromArray[2])
             {
-                var yearDiff = toArray[2] - fromArray[2];
-                var noOfLeapYears = Math.Round((double)(yearDiff/4.0), MidpointRounding.ToEven);
-                diffInDays = (int)(yearDiff * 365 + noOfLeapYears);
+                diffInDays = (toArray[2] - fromArray[2]) * 365;
+                diffInDays += CalculateLeapYearDays(fromArray, toArray);
             }
 
-            var daysInYearDiff = DaysInYear(toArray) - DaysInYear(fromArray);
-            diffInDays = diffInDays + daysInYearDiff;
+            int daysInYearDiff = DaysInYear(toArray) - DaysInYear(fromArray);
+            diffInDays += daysInYearDiff;
             return diffInDays;
+        }
+
+        //Calculate Leap Year days
+        internal int CalculateLeapYearDays(int[] fromArray, int[] toArray)
+        {
+            int leapYearDays = 0;
+
+            int leapYear = fromArray[2];
+            while (!IsLeapYear(leapYear))
+            {
+                leapYear++;
+            }
+
+            leapYearDays = (int)Math.Round(((toArray[2] - leapYear) / 4.0), MidpointRounding.ToEven);
+
+            leapYearDays = leapYearDays > 1 ? leapYearDays - 1 : 0;
+
+            if (IsLeapYear(fromArray[2]))
+            {
+                leapYearDays += fromArray[1] < 3 ? 1 : 0;
+            }
+
+            if (IsLeapYear(toArray[2]))
+            {
+                leapYearDays += toArray[1] > 2 ? 1 : 0;
+            }
+            return leapYearDays;
+        }
+
+        //Leap Year Check
+        internal bool IsLeapYear(int year)
+        {
+            if ((year % 400) == 0)
+                return true;
+            else if ((year % 100) == 0)
+                return false;
+            else if ((year % 4) == 0)
+                return true;
+            else
+                return false;
         }
 
         //To calculate number of days with in the year
@@ -69,7 +107,7 @@ namespace Jeevan.Musku.DateCalculator.Utilities
             int days = 0;
             for (int i = 1; i < dateArray[1]; i++)
             {
-                days = days + DaysInMonth[i];
+                days += DaysInMonth[i];
             }
             return days + dateArray[0];
         }
